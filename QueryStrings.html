@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Query Strings</title>
+    <script>
+        function GetQueryStrings(){
+            var _queryURL = window.location.search;
+            alert("Value returned by location.search is URL is: " + _queryURL);
+            
+            var res = new  URLSearchParams(_queryURL);
+            alert("Value returned by URLSearchParams is: " + res);            
+
+        }
+    </script>
+</head>
+<body>
+
+    Enter the URL <br>
+    
+    <button onclick="GetQueryStrings()">Get Query Strings</button>
+    
+</body>
+</html>

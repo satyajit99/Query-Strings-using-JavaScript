@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Query Strings</title>
+    <script>
+        function GetQueryStrings(){
+            var _queryURL = window.location.search;
+            alert("Value returned by location.search is URL is: " + _queryURL);
+            
+            var res = new  URLSearchParams(_queryURL);
+            alert("Value returned by URLSearchParams is: " + res);
+
+            //GetAll
+            var _allParams =  res.getAll("country");
+            alert(_allParams);
+            
+            //Get
+            var _country  = res.get("country");
+            alert("The value of country is: " + _country);
+
+            //Has
+            var _hasValue = res.has("country");
+            alert("Does the Url has the query string parameter - Country?" + _hasValue);
+
+            //Delete
+            var _toDelete = res.delete("country");
+            alert("The Query String after deleting is: " + res);
+
+            //Append
+            res.append("continent","Africa");
+            alert("New Query String after append is: "+ res);
+
+            
+
+        }
+    </script>
+</head>
+<body>
+
+    Enter the URL <br>
+    
+    <button onclick="GetQueryStrings()">Get Query Strings</button>
+    
+</body>
+</html>
